@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlannedMind | Student Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PORTAL HEADER -->
+<header>
+    <h1 class="brand-title">
+        <img src="images/YOUR-IMAGE-NAME.png" alt="PlannedMind logo">
+        <span>PlannedMind</span>
+    </h1>
+    <p>Your personal study partner</p>
+</header>
+
+
+    <main>
+
+        <!-- WELCOME AND THEME -->
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL LEARNING SPACE ✨</p>
+                <h2>Welcome to your study space!</h2>
+                <p>Plan your day. Focus on your goals. Track your progress.</p>
+            </div>
+        </section>
+
+        
+<!-- STUDY ASSISTANT -->
+<section class="ai-card">
+    <div class="ai-icon">
+        <img src="images/planned mind.png" alt="PlannedMind logo">
+    </div>
+
+    <div>
+        <p class="eyebrow">STUDYSMART ASSISTANT</p>
+        <h2>Your goals, one step at a time.</h2>
+        <p>Organize your tasks, stay consistent, and make time for learning.</p>
+    </div>
+</section>
+
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+            <p class="eyebrow">YOUR PROGRESS AT A GLANCE</p>
+            <h2>My Dashboard </h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Total Tasks</span>
+                    <h3 id="totalTasks">0</h3>
+                    <p>All your study tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>Completed</span>
+                    <h3 id="completedTasks">0</h3>
+                    <p>Tasks finished</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>Pending</span>
+                    <h3 id="pendingTasks">0</h3>
+                    <p>Tasks left to do</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>Progress</span>
+                    <h3 id="progressPercent">0%</h3>
+                    <div class="progress-track">
+                        <div id="progressBar" class="progress-fill"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STUDY PLAN GENERATOR -->
+        <section class="study-plan">
+            <p class="eyebrow">PLAN • FOCUS • ACHIEVE</p>
+            <h2>My Study Plan 📅</h2>
+            <p>Create a study schedule from your saved tasks.</p>
+
+            <label for="studyHours">Available study hours today</label>
+            <input
+                type="number"
+                id="studyHours"
+                min="1"
+                max="12"
+                value="3"
+                required
+            >
+
+            <label for="planType">Choose your study plan</label>
+            <select id="planType">
+                <option value="daily">Today's Study Plan</option>
+                <option value="weekly">Weekly Study Plan</option>
+                <option value="urgent">Deadline Priority Plan</option>
+            </select>
+
+            <label for="studyStart">Preferred start time</label>
+            <input
+                type="time"
+                id="studyStart"
+                value="17:00"
+            >
+
+            <label for="breakMinutes">Break between sessions</label>
+            <select id="breakMinutes">
+                <option value="5">5 minutes</option>
+                <option value="10" selected>10 minutes</option>
+                <option value="15">15 minutes</option>
+            </select>
+
+            <button type="button" id="generatePlan">
+                ✨ Generate My Study Plan
+            </button>
+
+            <div id="studyPlanOutput" aria-live="polite"></div>
+
+            <!-- REMINDER PERMISSION -->
+            <button type="button" id="enableReminders">
+                🔔 Enable Study Reminders
+            </button>
+            <p id="reminderStatus" aria-live="polite"></p>
+        </section>
+
+        <!-- ADD TASK FORM -->
+        <section class="planner">
+            <h2>＋ Add a Study Task</h2>
+
+            <form id="taskForm">
+
+                <label for="taskName">Task or assignment name</label>
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="e.g. Complete linked list assignment"
+                    required
+                >
+
+                <label for="subject">Subject</label>
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="e.g. Data Structures"
+                    required
+                >
+
+                <label for="taskType">Task type</label>
+                <select id="taskType" required>
+                    <option value="Assignment">Assignment</option>
+                    <option value="Subject Study">Subject Study</option>
+                    <option value="Exam Preparation">Exam Preparation</option>
+                    <option value="Lab Record">Lab Record</option>
+                    <option value="Project">Mini Project</option>
+                    <option value="Revision">Revision</option>
+                </select>
+
+                <label for="dueDate">Deadline</label>
+                <input type="date" id="dueDate" required>
+
+                <label for="duration">Estimated study duration (minutes)</label>
+                <input
+                    type="number"
+                    id="duration"
+                    min="15"
+                    max="600"
+                    step="15"
+                    value="60"
+                    required
+                >
+
+                <label for="priority">Priority</label>
+                <select id="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label for="reminderTime">Daily study reminder time</label>
+                <input type="time" id="reminderTime">
+
+                <button type="submit">Add Task to My Week</button>
+
+            </form>
+        </section>
+
+        <!-- SAVED STUDY TASKS -->
+        <section class="tasks">
+            <h2>My Study Tasks 📚</h2>
+            <ul id="taskList"></ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

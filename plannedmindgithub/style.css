@@ -1,0 +1,739 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #f5f3ff;
+    --surface: #ffffff;
+    --primary: #7565e8;
+    --text: #292542;
+    --muted: #77738e;
+    --border: #e6e1fa;
+    --soft: #ede9fe;
+}
+
+body[data-theme="ocean"] {
+    --bg: #eff6ff;
+    --surface: #ffffff;
+    --primary: #2879d0;
+    --text: #172d4b;
+    --muted: #64748b;
+    --border: #dbeafe;
+    --soft: #dbeafe;
+}
+
+body[data-theme="mint"] {
+    --bg: #ecfdf5;
+    --surface: #ffffff;
+    --primary: #159875;
+    --text: #173b32;
+    --muted: #638078;
+    --border: #d1fae5;
+    --soft: #d1fae5;
+}
+
+body[data-theme="dark"] {
+    --bg: #151526;
+    --surface: #222239;
+    --primary: #a497ff;
+    --text: #f5f3ff;
+    --muted: #c0bdd5;
+    --border: #393653;
+    --soft: #34304f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+header {
+    background: linear-gradient(
+        125deg,
+        #6555df,
+        #9375ef,
+        #d17bc9
+    );
+    color: white;
+    text-align: center;
+    padding: 30px 18px;
+    border-radius: 0 0 24px 24px;
+}
+
+header h1 {
+    display: inline-block;
+    padding: 3px 0;
+}
+
+
+header h1 {
+    margin: 0 0 6px;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+section {
+    background: var(--surface);
+    padding: 24px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px #51458b0d;
+    animation: fadeUp 0.65s ease both;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.welcome {
+    background:
+        radial-gradient(circle at 95% 5%, var(--soft), transparent 40%),
+        var(--surface);
+}
+
+.theme-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.theme-row label {
+    font-weight: 600;
+}
+
+.ai-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(120deg, var(--surface), var(--soft));
+}
+
+.ai-icon {
+    min-width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: var(--primary);
+    color: white;
+    font-size: 30px;
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+.ai-card h2 {
+    margin-bottom: 8px;
+}
+
+.ai-card p:last-child {
+    margin-bottom: 0;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+button {
+    padding: 12px 18px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #51458b30;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px;
+    margin: 12px 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    animation: fadeUp 0.35s ease;
+}
+
+.task-details {
+    overflow-wrap: anywhere;
+}
+
+.task-details p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    opacity: 0.65;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.task-actions button {
+    margin: 0;
+    padding: 9px 12px;
+    font-size: 0.85rem;
+}
+
+.delete-btn {
+    background: #dc5d70;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    .ai-card {
+        align-items: flex-start;
+    }
+}
+
+/* DASHBOARD CARDS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    padding: 18px;
+    border-radius: 15px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    transition: transform 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card span {
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.stat-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.8rem;
+    margin: 12px 0 6px;
+    color: var(--primary);
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* PROGRESS BAR */
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+/* STUDY PLAN */
+.study-plan {
+    background:
+        radial-gradient(circle at top right, var(--soft), transparent 50%),
+        var(--surface);
+}
+
+.study-plan label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+#studyHours {
+    max-width: 250px;
+}
+
+.plan-item {
+    padding: 14px;
+    margin-top: 12px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
+    background: var(--bg);
+    animation: fadeUp 0.4s ease;
+}
+
+.plan-item h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.plan-item p {
+    margin: 4px 0;
+    color: var(--muted);
+}
+
+.plan-message {
+    padding: 14px;
+    background: var(--soft);
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Consistent sizing and alignment */
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+    overflow-wrap: anywhere;
+}
+
+h2 {
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+section {
+    width: 100%;
+}
+
+/* Dashboard cards stay in the correct order */
+
+/* HORIZONTAL DASHBOARD CARDS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+    align-items: stretch;
+}
+
+.stat-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 4px 12px;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 18px #51458b0b;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #51458b16;
+}
+
+.stat-card span {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text);
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.stat-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 1.65rem;
+    line-height: 1.3;
+    color: var(--primary);
+    white-space: nowrap;
+}
+
+.stat-card p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 3px 0 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--muted);
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* PROGRESS CARD */
+.stat-card:has(.progress-track) {
+    grid-template-rows: auto auto auto;
+}
+
+.stat-card:has(.progress-track) .progress-track {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* DASHBOARD RESPONSIVENESS */
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Align the study assistant */
+.ai-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.ai-card > div:last-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.ai-card h2 {
+    margin-bottom: 8px;
+}
+
+.ai-card p {
+    overflow-wrap: anywhere;
+}
+
+/* Align the theme selector */
+.theme-row {
+    display: grid;
+    grid-template-columns: 1fr minmax(160px, 220px);
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-row select {
+    width: 100%;
+    margin: 0;
+}
+
+/* Mobile and smaller screens */
+@media (max-width: 800px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-card {
+        align-items: flex-start;
+    }
+}
+
+/* FONT STYLES */
+body {
+    font-family: "Trixy", "DM Sans", sans-serif;
+}
+
+/* Titles throughout the portal */
+h2,
+.stat-card h3,
+.plan-item h3 {
+    font-family: "Alkes", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: -0.4px;
+}
+
+/* Supporting text below titles */
+p,
+label,
+.stat-card span,
+input,
+select,
+button {
+    font-family: "Trixy", "DM Sans", sans-serif;
+}
+
+/* PORTAL BRANDING */
+header h1 {
+    font-family: "Nexa Slab", Georgia, serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffe29a,
+        #ffc6ef
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+header p {
+    color: #ffffff;
+    font-size: 0.98rem;
+    letter-spacing: 0.5px;
+}
+
+/* Stronger visual highlight for dashboard headings */
+.dashboard > h2,
+.study-plan > h2 {
+    color: var(--text);
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    line-height: 1.35;
+}
+
+/* Better title and description spacing */
+.eyebrow {
+    line-height: 1.5;
+    margin-bottom: 10px;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* Task form layout */
+#taskForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 16px;
+}
+
+#taskForm label {
+    align-self: end;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#taskForm input,
+#taskForm select {
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 8px;
+}
+
+#taskForm button {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+@media (max-width: 560px) {
+    #taskForm {
+        grid-template-columns: 1fr;
+    }
+
+    #taskForm button {
+        grid-column: 1;
+        width: 100%;
+    }
+}
+
+/* Study task list */
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+}
+
+#taskList .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--bg);
+}
+
+#taskList .task-details {
+    flex: 1;
+    min-width: 0;
+}
+
+#taskList .task-title {
+    display: block;
+    font-size: 1.05rem;
+    overflow-wrap: anywhere;
+}
+
+#taskList .task-details p {
+    margin: 5px 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+#taskList .task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#taskList .task-actions button {
+    margin: 0;
+}
+
+@media (max-width: 550px) {
+    #taskList .task-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Small logo beside PlannedMind title */
+.brand-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin:0;
+}
+
+.brand-title img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Keep the StudySmart logo small and fully visible */
+.ai-icon {
+    width: 70px;
+    height: 70px;
+    flex: 0 0 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: transparent;
+}
+
+.ai-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
